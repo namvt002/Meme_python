@@ -1,4 +1,7 @@
-## account: TrungTV20
+## Account: TrungTV20
+
+## Create 
+16/07/2023
 
 ## overview of the project: 
 A multimedia application to dynamically generate memes
