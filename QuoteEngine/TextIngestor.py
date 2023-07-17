@@ -30,11 +30,6 @@ class TextIngestor(IngestorInterface):
                             body, author = parts
                             quote = QuoteModel(body, author)
                             quotes.append(quote)
-                    # parts = line.strip().split('-')
-                    # if len(parts) == 2:
-                    #     author, body = parts
-                    #     quote = QuoteModel(author.strip(), body.strip())
-                    #     quotes.append(quote)
         except FileNotFoundError:
             print(f"File not found in system")
 

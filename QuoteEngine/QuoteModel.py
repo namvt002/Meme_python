@@ -7,10 +7,10 @@ class QuoteModel:
     author: str
 
     def __init__(self, body: str, author: str) -> None:
-        """init."""
+        """init body and author."""
         self.body = body
         self.author = author
 
     def __repr__(self) -> str:
-        """repr."""
+        """print repr."""
         return f"{self.body} - {self.author}"

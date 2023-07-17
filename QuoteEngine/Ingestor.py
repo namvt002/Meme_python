@@ -1,4 +1,4 @@
-"""check to see which class can be used to parse the contents of a file."""
+"""check contents of a file."""
 
 from typing import List
 from .IngestorInterface import IngestorInterface
@@ -17,7 +17,7 @@ class Ingestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """parse."""
+        """method parse."""
         for importer in cls.importers:
             if importer.can_ingest(path):
                 return importer.parse(path)

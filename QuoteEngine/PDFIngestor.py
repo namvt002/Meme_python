@@ -1,4 +1,4 @@
-"""Parsing the contents of a pdf file."""
+"""Parsing pdf file."""
 
 
 import subprocess
@@ -21,7 +21,7 @@ class PDFIngestor(IngestorInterface):
             if not cls.can_ingest(path):
                 raise Exception('File not found in system')
 
-            text_file = Path(f'./temp/{random.randint(0,100000)}.txt')
+            text_file = Path(f'./temp/{random.randint(0,100000000)}.txt')
             subprocess.call(['pdftotext', path, str(text_file)])
 
             quotes = []
@@ -32,6 +32,6 @@ class PDFIngestor(IngestorInterface):
                         new_quote = QuoteModel(parsed[0], parsed[1])
                         quotes.append(new_quote)
             return quotes
-        except Exception:
-            print('An error parsing PDF file')
+        except Exception as e:
+            print(f'An error parsing PDF file {e}')
             return []
